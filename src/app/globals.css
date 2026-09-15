@@ -1,0 +1,99 @@
+@import "tailwindcss";
+
+/*
+ * The brief's design scale. Tailwind's colour, type, radius, shadow, and
+ * container scales are replaced, so the only values that exist are the ones the
+ * design uses; spacing keeps Tailwind's quarter-rem grid (mt-8.25 is 33px), and
+ * tracking and most line heights keep Tailwind's named steps.
+ */
+@theme {
+  --font-sans: Arial, Helvetica, sans-serif;
+
+  /* Colours: shadcn/ui's semantic tokens over Garage's white, charcoal, and orange. */
+  --color-*: initial;
+  --color-background: #fafafa;
+  --color-foreground: #171717;
+  --color-card: #fff;
+  --color-card-foreground: #171717;
+  --color-popover: #fff;
+  --color-popover-foreground: #171717;
+  /* Primary actions are charcoal. */
+  --color-primary: #20201e;
+  --color-primary-foreground: #fff;
+  /* Subdued surfaces and lower-emphasis text. */
+  --color-muted: #f2f2f2;
+  --color-muted-foreground: #66645f;
+  --color-destructive: #af2b1e;
+  /* Strokes, lightest first: dashed row rules, card borders, control borders, and the stroke of hovered controls and pending markers. */
+  --color-rule: #eeebe6;
+  --color-border: #e8e6e2;
+  --color-input: #d9d6d1;
+  --color-border-strong: #c6c0b8;
+  /* Accents; tints are opacity modifiers on the accent (bg-brand/8, border-success/20). */
+  --color-brand: #f97315;
+  --color-success: #49604c;
+
+  /* Type: a compact scale of font sizes only, so line height comes from the text's block. */
+  --text-*: initial;
+  --text-2xs: 0.625rem; /* 10px */
+  --text-xs: 0.6875rem; /* 11px */
+  --text-sm: 0.75rem; /* 12px */
+  --text-base: 0.8125rem; /* 13px */
+  --text-lg: 0.875rem; /* 14px */
+  --text-xl: 1rem; /* 16px */
+  --text-2xl: 1.125rem; /* 18px */
+  --text-3xl: 1.375rem; /* 22px */
+  /* Prose reads at 1.6; rows and paragraphs in the brief at 1.7. */
+  --leading-relaxed: 1.6;
+  --leading-loose: 1.7;
+
+  /* Corners: a mark, tags and fields, buttons and notes, cards, the progress icon. */
+  --radius-*: initial;
+  --radius-xs: 0.125rem; /* 2px */
+  --radius-sm: 0.25rem; /* 4px */
+  --radius-md: 0.4375rem; /* 7px */
+  --radius-lg: 0.625rem; /* 10px */
+  --radius-xl: 0.875rem; /* 14px */
+
+  /* Elevation: a field at rest, a hovered button, a floating card. */
+  --shadow-*: initial;
+  --shadow-xs: 0 2px 4px
+    color-mix(in oklab, var(--color-foreground) 2%, transparent);
+  --shadow-sm: 0 2px 5px
+    color-mix(in oklab, var(--color-foreground) 7%, transparent);
+  --shadow-lg: 0 8px 30px
+    color-mix(in oklab, var(--color-foreground) 9%, transparent);
+
+  /* Layout columns: the page, the introduction, the search form and what answers it, the progress panel. */
+  --container-*: initial;
+  --container-page: 71rem; /* 1136px */
+  --container-intro: 52.5rem; /* 840px */
+  --container-form: 46.25rem; /* 740px */
+  --container-panel: 40.625rem; /* 650px */
+
+  --default-transition-duration: 140ms;
+  --default-transition-timing-function: ease;
+  --animate-enter: enter 250ms ease-out both;
+  --animate-breathe: breathe 1.8s ease-in-out infinite;
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(6px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes breathe {
+    50% {
+      opacity: 0.35;
+    }
+  }
+}
+
+/* Hover styles apply on every pointer, not only on hover-capable devices. */
+@custom-variant hover (&:hover);
+/* The two widths at which the layout stacks; phone is declared last so it wins where both match. */
+@custom-variant tablet (@media (max-width: 850px));
+@custom-variant phone (@media (max-width: 680px));

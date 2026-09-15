@@ -11,6 +11,14 @@ Build a concise, cited fire-department research brief for Garage account executi
 - `src/lib/server`: configuration, request handling, and public errors.
 - `scripts` and `evaluation/gold.json`: live evaluation, saved-run replay, and offline scoring.
 
+<!-- BEGIN:nextjs-agent-rules -->
+
+## Next.js
+
+Read the relevant guide in `node_modules/next/dist/docs/` before writing code. This installed version has breaking changes, so use its bundled documentation and heed deprecations rather than relying on older Next.js conventions.
+
+<!-- END:nextjs-agent-rules -->
+
 ## Coding conventions
 
 - Use TypeScript, `@/` imports for shared source modules, and relative imports for nearby modules. Validate external data with Zod.
