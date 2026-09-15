@@ -1,0 +1,17 @@
+node_modules/
+.next/
+out/
+coverage/
+.vercel/
+.env*
+!.env.example
+*.tsbuildinfo
+.DS_Store
+tmp/
+artifacts/
+# Private assignment and interview planning material must never be published.
+garage-research-design.md
+garage-implementation-plan.md
+garage-take-home-fire-department.pdf
+# Local editor and agent tooling.
+.claude/
