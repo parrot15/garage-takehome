@@ -40,3 +40,18 @@ npm run test:coverage
 ```
 
 Offline tests use controlled provider responses.
+
+## Gold evaluation
+
+The gold suite made iteration fast by checking changes against a consistent set of expected results. `evaluation/gold.json` records dated, source-backed expectations for 12 Place IDs: leaders, contacts, vehicles, useful signals, and claims that must not appear. The cases cover different department sizes, ambiguous names, and a non-department that must be rejected.
+
+```sh
+npm run eval -- --case gold
+npm run score -- artifacts/evaluations/<new-run> --baseline artifacts/evaluations/<previous-run>
+```
+
+The gold run exercises the real provider pipeline and saves briefs, retrieved evidence, failures, and timings. The local scorer reports missing facts, incorrect labels, and run times; `--baseline` highlights changes in coverage and critical failures. This makes gains and regressions easy to spot after changing retrieval or prompts.
+
+For focused prompt or model comparisons, `npm run eval -- --replay <saved-report.json>` reuses the same evidence without repeating retrieval. Live runs and synthesis replays incur provider charges. The suite checks known expectations; review claims against cited passages before accepting quality improvements.
+
+Keep `evaluation/gold.json` versioned as the shared test dataset. Generated reports and scorecards stay local in ignored `artifacts/` or `evaluation/reference/`.
