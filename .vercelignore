@@ -1,0 +1,12 @@
+# Keep CLI uploads consistent with the release tracked in Git.
+!.gitignore
+.env*
+!.env.example
+*.tsbuildinfo
+coverage/
+tmp/
+artifacts/
+.claude/
+garage-research-design.md
+garage-implementation-plan.md
+garage-take-home-fire-department.pdf
