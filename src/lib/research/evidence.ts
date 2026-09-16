@@ -24,8 +24,9 @@ const SOURCE_MAX = 60_000;
 const SOURCE_PASSAGES = 100;
 /**
  * Words that mark a passage of a long document as being about a fire
- * department's people, apparatus, or money. "Fire" is left out on purpose:
- * it is in every passage of such a document and would decide nothing.
+ * department's people, apparatus, or money. Each distinct word counts once.
+ * "Fire" is left out on purpose: it is in every passage of such a document
+ * and would decide nothing.
  */
 const TOPIC_WORDS = {
   people: ["chief", "officer", "officers", "president"],
@@ -121,17 +122,29 @@ export function splitPassages(text: string): Block[] {
     .filter((block) => block.text);
 }
 
-/** Scores passages by topic words and matching department identity. */
+/** Scores passages by distinct topic words and matching department identity. */
 function score(block: Block, identity: string[]): number {
   const text = words(block.text);
-  const topics = text.filter((word) => TOPIC.has(word)).length;
-  return topics + (namesPlace(text, identity) ? 3 : 0);
+  const topics = new Set(text.filter((word) => TOPIC.has(word)));
+  return topics.size + (namesPlace(text, identity) ? 3 : 0);
 }
 
-/** Splits the character budget evenly across pages. */
+/** Distributes the character budget across pages, reallocating unused room from short pages. */
 function shares(needs: number[], total: number): number[] {
-  const share = Math.floor(total / Math.max(1, needs.length));
-  return needs.map((need) => Math.min(need, SOURCE_MAX, share));
+  const order = needs
+    .map((need, index) => ({ need: Math.min(need, SOURCE_MAX), index }))
+    .sort((a, b) => a.need - b.need);
+  const result = new Array<number>(needs.length).fill(0);
+  let remaining = total;
+  order.forEach(({ need, index }, position) => {
+    const share = Math.min(
+      need,
+      Math.floor(remaining / (order.length - position)),
+    );
+    result[index] = share;
+    remaining -= share;
+  });
+  return result;
 }
 
 /** Keeps a whole page when it fits, otherwise selects relevant passages in document order. */

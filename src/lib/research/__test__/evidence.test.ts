@@ -106,6 +106,53 @@ describe("evidence preparation", () => {
       sources[0]?.passages.reduce((sum, p) => sum + p.text.length, 0),
     ).toBeLessThanOrEqual(18000);
   });
+  it("ranks a passage by distinct topic words and the department's name, not by repeating fire", () => {
+    const useful =
+      "Maple Fire Department's budget funds a pumper purchase; the chief will replace Engine 5.";
+    const text = [
+      "# Overview",
+      "Fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire fire.",
+      "# Fire Department",
+      useful,
+      "# Parks",
+      "Parks and recreation. ".repeat(60),
+    ].join("\n\n");
+    const chosen = choosePassages(
+      splitPassages(text),
+      makePlace(),
+      useful.length + 30,
+    );
+    expect(chosen.blocks.map((block) => block.text)).toEqual([
+      `# Fire Department\n\n${useful}`,
+    ]);
+  });
+  it("gives a long page the room that short pages leave, whichever was read first", () => {
+    const roster = makePage({
+      url: "https://county.example.org/roster",
+      text: Array.from(
+        { length: 40 },
+        (_, i) =>
+          `Engine ${i} is a 20${String(i).padStart(2, "0")} Pierce pumper assigned to Station ${i}.`,
+      ).join("\n\n"),
+    });
+    const short = (n: number) =>
+      makePage({
+        url: `https://news.example.org/${n}`,
+        text: `Maple Fire Department news item ${n}.`,
+      });
+    const sources = buildEvidence(
+      [roster, short(1), short(2), short(3)],
+      [makeCandidate()],
+      makePlace(),
+      { maxCharacters: 4_000 },
+    );
+    expect(sources.map((source) => source.partial)).toEqual([
+      false,
+      false,
+      false,
+      false,
+    ]);
+  });
   it("marks provider truncation as partial review", () =>
     expect(
       buildEvidence(
