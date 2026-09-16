@@ -159,7 +159,7 @@ describe("replaySelection", () => {
       "https://maple.example.org/fire",
       ...queries.map((query) => `https://maple.example.org/${query.id}`),
     ]);
-    expect(replay?.selected).toHaveLength(12);
+    expect(replay?.selected).toHaveLength(15);
   });
   it("matches searches saved before queries had ids by their wording, sorting unknown ones last", () => {
     const [first, second] = queries as [

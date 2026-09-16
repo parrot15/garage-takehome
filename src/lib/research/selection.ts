@@ -5,8 +5,11 @@ import { officialHost } from "./queries";
 import { canonicalUrl, siteHost } from "./urls";
 import { words } from "./words";
 
-/** Pages read per brief. */
-export const READ_LIMIT = 12;
+/**
+ * Pages read per brief: one for each of the fourteen queries' top results,
+ * plus three for second pages on the topics that matter most.
+ */
+export const READ_LIMIT = 17;
 /** The listed website is rich but must not crowd out records held elsewhere. */
 const OFFICIAL_SHARE = 0.45;
 
