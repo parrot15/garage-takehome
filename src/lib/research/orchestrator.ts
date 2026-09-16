@@ -26,8 +26,8 @@ import {
 } from "./selection";
 
 const DEFAULT_LIMITS = {
-  totalMs: 150000,
-  synthesisReserveMs: 90000,
+  totalMs: 220000,
+  synthesisReserveMs: 170000,
   readLimit: READ_LIMIT,
   maxEvidenceCharacters: 220000,
 };

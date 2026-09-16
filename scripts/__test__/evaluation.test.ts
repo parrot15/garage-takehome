@@ -155,9 +155,9 @@ describe("runCase", () => {
       promptVersion: expect.stringMatching(/^department-brief-v/),
       configuredModel: "gpt-6-astra",
       reasoningEffort: "low",
-      modelTimeoutMs: 90000,
+      modelTimeoutMs: 170000,
       providerTimeoutMs: 25000,
-      researchTimeoutMs: 150000,
+      researchTimeoutMs: 220000,
     });
     expect(report.output?.facts).toHaveLength(1);
     expect(report.input.placeId).toBe("maple-place");

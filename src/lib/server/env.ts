@@ -15,8 +15,9 @@ const schema = z.object({
   openaiModel: nonempty.default("gpt-6-astra"),
   reasoningEffort: z.enum(["low", "medium", "high"]).default("low"),
   providerTimeoutMs: milliseconds(1000, 60000, 25000),
-  modelTimeoutMs: milliseconds(10000, 120000, 90000),
-  researchTimeoutMs: milliseconds(30000, 180000, 150000),
+  // Keep room for slow provider responses within the overall research budget.
+  modelTimeoutMs: milliseconds(10000, 180000, 170000),
+  researchTimeoutMs: milliseconds(30000, 220000, 220000),
 });
 export type ServerConfig = z.infer<typeof schema>;
 

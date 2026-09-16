@@ -11,8 +11,8 @@ describe("central server configuration", () => {
     expect(getServerConfig(credentials)).toMatchObject({
       openaiModel: "gpt-6-astra",
       reasoningEffort: "low",
-      modelTimeoutMs: 90000,
-      researchTimeoutMs: 150000,
+      modelTimeoutMs: 170000,
+      researchTimeoutMs: 220000,
     });
     expect(() => getServerConfig({})).toThrow("not configured");
   });
@@ -23,8 +23,8 @@ describe("central server configuration", () => {
         OPENAI_MODEL: "gpt-6-nova",
         OPENAI_REASONING_EFFORT: "high",
         PROVIDER_TIMEOUT_MS: "30000",
-        MODEL_TIMEOUT_MS: "60000",
-        RESEARCH_TIMEOUT_MS: "120000",
+        MODEL_TIMEOUT_MS: "120000",
+        RESEARCH_TIMEOUT_MS: "200000",
       }),
     ).toEqual({
       googlePlacesApiKey: "google-test",
@@ -33,8 +33,8 @@ describe("central server configuration", () => {
       openaiModel: "gpt-6-nova",
       reasoningEffort: "high",
       providerTimeoutMs: 30000,
-      modelTimeoutMs: 60000,
-      researchTimeoutMs: 120000,
+      modelTimeoutMs: 120000,
+      researchTimeoutMs: 200000,
     });
   });
   it("never leaks credentials in a validation failure", () => {
