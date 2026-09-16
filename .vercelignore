@@ -6,6 +6,7 @@
 coverage/
 tmp/
 artifacts/
+evaluation/reference/
 .claude/
 garage-research-design.md
 garage-implementation-plan.md

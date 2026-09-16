@@ -9,6 +9,7 @@ coverage/
 .DS_Store
 tmp/
 artifacts/
+evaluation/reference/
 # Private assignment and interview planning material must never be published.
 garage-research-design.md
 garage-implementation-plan.md
