@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "verifiedOn": "2026-09-15",
+  "verifiedOn": "2026-09-16",
   "departments": [
     {
       "id": "wise-avenue",
@@ -147,6 +147,66 @@
       "notes": "The city site refuses live crawls; the chief page is reachable only from Exa's cache. Niemeyer retired in November 2025."
     },
     {
+      "id": "franklin-tn",
+      "placeId": "ChIJIbfhSFF-ZIgRN3a-GjRyS-M",
+      "name": "City of Franklin (TN) Fire Department Administration",
+      "locality": "Franklin",
+      "region": "TN",
+      "scope": ["selected_place", "parent_department"],
+      "scopeName": "Franklin",
+      "chief": { "name": "Glenn Johnson" },
+      "contacts": [
+        {
+          "name": "Glenn Johnson",
+          "phones": ["615-550-6753"],
+          "emails": ["glennj@franklintn.gov"]
+        }
+      ],
+      "vehicles": [
+        {
+          "label": "Engine 1, 2025 Sutphen pumper",
+          "modelYear": 2025,
+          "make": "Sutphen",
+          "pattern": "Engine 1\\b"
+        },
+        {
+          "label": "Engine 6, 2025 Sutphen pumper",
+          "modelYear": 2025,
+          "make": "Sutphen",
+          "pattern": "Engine 6\\b"
+        },
+        {
+          "label": "former Engine 1, 2009, moved to reserve",
+          "modelYear": 2009
+        },
+        {
+          "label": "former Engine 6, 2007, moved to reserve",
+          "modelYear": 2007
+        },
+        {
+          "label": "Tower 6, 2025 Sutphen SPH-100 platform",
+          "modelYear": 2025,
+          "pattern": "SPH-?100|Tower 6"
+        },
+        { "label": "Tower 46, 2004, reserve", "modelYear": 2004 }
+      ],
+      "signals": [
+        {
+          "label": "replaced engines kept in reserve",
+          "category": "fleet",
+          "status": "retained",
+          "pattern": "2007|2009"
+        }
+      ],
+      "angleKinds": ["replacement", "aging", "funding", "leadership", "news"],
+      "sources": [
+        "https://www.franklintn.gov/government/departments-a-j/fire/about-us/meet-the-chief",
+        "https://www.facebook.com/CityOfFranklin/posts/in-honor-of-national-twin-day-meet-the-franklin-fire-departments",
+        "https://stories.opengov.com/cityoffranklintn/published/TrhpZdOhWc"
+      ],
+      "notes": "The city site refuses live crawls; the chief page with phone and email is reachable only from Exa's cache."
+    },
+    {
       "id": "hebron-ne",
       "placeId": "ChIJxSokJLmRl4cRA0bs7kr-lGw",
       "name": "Hebron Fire Department",
@@ -190,6 +250,249 @@
         "https://hebronjournalregister.com/linton-served-14-years-as-chief/"
       ],
       "notes": "No roster or current chief is published, so a sparse brief is the right result. Three other Hebrons share the name."
+    },
+    {
+      "id": "hood-river",
+      "placeId": "ChIJicrbFooOllQRHDYKFoqOIEc",
+      "name": "Hood River Fire Department",
+      "locality": "Hood River",
+      "region": "OR",
+      "scope": ["selected_place", "parent_department"],
+      "chief": { "name": "Josh Rogers", "since": "2026-03-04" },
+      "formerLeaders": [{ "name": "Leonard Damian" }],
+      "vehicles": [
+        {
+          "label": "Engine 2, 2010 Pierce Velocity PUC",
+          "modelYear": 2010,
+          "make": "Pierce"
+        },
+        {
+          "label": "Tower 3, 2011 Pierce Velocity 95-foot platform",
+          "modelYear": 2011,
+          "make": "Pierce"
+        },
+        {
+          "label": "Engine 4, 1998 Pierce Saber, outgoing reserve",
+          "modelYear": 1998,
+          "pattern": "Saber"
+        },
+        {
+          "label": "new Pierce PUC pumper, job 38817, delivered January 2025",
+          "pattern": "38817|750-gallon|HAAS"
+        },
+        { "label": "Brush 1, 2012 Ford", "modelYear": 2012, "make": "Ford" }
+      ],
+      "signals": [
+        {
+          "label": "Engine 4 planned surplus sale",
+          "pattern": "surplus",
+          "where": "facts"
+        }
+      ],
+      "angleKinds": ["disposition", "aging", "replacement", "leadership"],
+      "sources": [
+        "https://cityofhoodriver.gov/fire/fire-station-and-equipment/",
+        "https://cityofhoodriver.gov/new-fire-engine-spring-2025/",
+        "https://cityofhoodriver.gov/welcoming-new-fire-chief/"
+      ]
+    },
+    {
+      "id": "craftsbury",
+      "placeId": "ChIJQWhMG-vEtUwR18BQeAo2UBo",
+      "name": "Craftsbury Fire House",
+      "locality": "Craftsbury",
+      "region": "VT",
+      "scope": ["selected_place", "parent_department"],
+      "scopeName": "Craftsbury",
+      "chief": { "name": "Jeremiah McCann" },
+      "formerLeaders": [{ "name": "Walt Gutzmann" }],
+      "contacts": [
+        { "name": "Jeremiah McCann", "emails": ["craftsburyfd37@gmail.com"] }
+      ],
+      "vehicles": [
+        {
+          "label": "Engine 1, 1993 Simon/Duplex pumper",
+          "modelYear": 1993,
+          "pattern": "Simon|Duplex"
+        },
+        {
+          "label": "Engine 2, 2018 Ford F-550/HME",
+          "modelYear": 2018,
+          "pattern": "HME|F-?550|Ford"
+        },
+        {
+          "label": "Rescue 1, 2009 Spartan",
+          "modelYear": 2009,
+          "make": "Spartan"
+        },
+        {
+          "label": "Tanker 1, 2005 Sterling/Osco",
+          "modelYear": 2005,
+          "pattern": "Sterling|Osco"
+        }
+      ],
+      "angleKinds": ["aging", "funding", "replacement", "disposition"],
+      "sources": [
+        "https://craftsbury.gov/departments/fire-department/",
+        "https://www.firenews.org/vt/c/craftsbury/craftsburyvt.html",
+        "https://craftsbury.gov/wp-content/uploads/sites/39/2025/09/Town-Report-2017.pdf"
+      ],
+      "notes": "Google lists no website; the town site and a hobbyist roster carry the facts."
+    },
+    {
+      "id": "whitby",
+      "placeId": "ChIJMWdxOOse1YkRWxy078_cN-w",
+      "name": "Whitby Fire Department Headquarters",
+      "locality": "Whitby",
+      "region": "ON",
+      "scope": ["parent_department", "selected_place"],
+      "scopeName": "Whitby",
+      "chief": { "name": "Mark Pankhurst", "since": "2026-03-16" },
+      "formerLeaders": [{ "name": "Michael Hickey" }],
+      "vehicles": [
+        {
+          "label": "Engine 36, 2024 E-One Typhoon",
+          "modelYear": 2024,
+          "pattern": "E-?One"
+        },
+        {
+          "label": "Aerial 35, 2009 E-One Cyclone II platform",
+          "modelYear": 2009,
+          "pattern": "Aerial|platform|Cyclone"
+        },
+        {
+          "label": "Ladder 35, 2018 Pierce Enforcer Ascendant",
+          "modelYear": 2018,
+          "make": "Pierce"
+        },
+        {
+          "label": "Engine 31, 2019 E-One Typhoon X",
+          "modelYear": 2019,
+          "pattern": "E-?One"
+        },
+        {
+          "label": "Pumper 38, 2009 Seagrave spare",
+          "modelYear": 2009,
+          "make": "Seagrave"
+        }
+      ],
+      "signals": [
+        {
+          "label": "aerial on order for 2027",
+          "pattern": "2027|Ascendant",
+          "where": "facts"
+        }
+      ],
+      "angleKinds": ["aging", "replacement", "leadership", "news", "funding"],
+      "forbidden": [
+        {
+          "pattern": "2001 Spartan|GovDeals",
+          "where": "angles",
+          "note": "the 2001 Spartan Gladiator sold on GovDeals in December 2024 is not a reason to call; the 2002 Spartan/Almonte Pumper 36 is a retained spare on the cited roster"
+        }
+      ],
+      "sources": [
+        "https://www.whitby.ca/news/posts/town-of-whitby-announces-interim-fire-chief/",
+        "https://fire.fandom.com/wiki/Whitby_Fire_and_Emergency_Services",
+        "https://www.whitby.ca/news/posts/whitby-fire-and-emergency-services-puts-seventh-fire-truck-into-service/"
+      ],
+      "notes": "The detailed roster lives on a fan wiki whose extraction fails intermittently, so fleet recall varies by run."
+    },
+    {
+      "id": "lake-ozark",
+      "placeId": "ChIJvwJxZd7FxIcRNkUn7-mBZHg",
+      "name": "Lake Ozark Fire Protection District",
+      "locality": "Lake Ozark",
+      "region": "MO",
+      "scope": ["selected_place", "parent_department"],
+      "chief": { "name": "Jerry Blomberg", "since": "2025-03-05" },
+      "vehicles": [
+        {
+          "label": "Pierce Saber pumper, job 44252, delivered February 2026",
+          "pattern": "44252|Saber"
+        },
+        {
+          "label": "Sutphen SPH 100 aerial platform",
+          "pattern": "SPH ?100|Sutphen"
+        }
+      ],
+      "signals": [
+        { "label": "Saber pumper delivery", "pattern": "44252|Saber" }
+      ],
+      "angleKinds": ["replacement", "news", "leadership", "funding", "aging"],
+      "sources": [
+        "https://www.lofpd.com/meet-our-local-heroes",
+        "https://abc17news.com/news/top-stories/2025/03/11/lake-ozark-fire-protection-district-names-new-fire-chief/",
+        "https://www.piercemfg.com/customers/new-deliveries/lake-ozark-fire-protection-district-pumper-44252"
+      ],
+      "notes": "The district site lists units by station without model years."
+    },
+    {
+      "id": "lafd-station-27",
+      "placeId": "ChIJDQrc3DC_woARxa2l9bkhGhI",
+      "name": "Los Angeles Fire Department Station 27",
+      "locality": "Los Angeles",
+      "region": "CA",
+      "scope": ["parent_department"],
+      "scopeName": "Los Angeles Fire Department",
+      "chief": { "name": "Jaime Moore", "since": "2025-11-14" },
+      "vehicles": [
+        { "label": "Engine 27, 2010 KME", "modelYear": 2010, "make": "KME" },
+        {
+          "label": "Engine 227, 2003 Pierce",
+          "modelYear": 2003,
+          "make": "Pierce"
+        },
+        {
+          "label": "Truck 27, 2003 American LaFrance aerial",
+          "modelYear": 2003,
+          "pattern": "LaFrance"
+        },
+        {
+          "label": "USAR 27, 1999 Pierce Dash heavy rescue",
+          "modelYear": 1999,
+          "pattern": "USAR|Dash"
+        }
+      ],
+      "angleKinds": ["aging", "leadership", "funding", "news"],
+      "sources": [
+        "https://lafd.org/about/organization/fire-chief",
+        "https://5280fire.com/home/other-states-fire-apparatus-stations/california/los-angeles-fire-department/"
+      ],
+      "notes": "A metro station: the brief should stay scoped to the parent department and this station's rigs."
+    },
+    {
+      "id": "fdny-engine-54",
+      "placeId": "ChIJH6MQnFZYwokR2GuKue7T5h8",
+      "name": "FDNY Engine 54/Ladder 4/Battalion 9",
+      "locality": "New York",
+      "region": "NY",
+      "scope": ["parent_department", "selected_place"],
+      "scopeName": "New York|FDNY",
+      "chief": { "name": "Lillian Bonsignore" },
+      "vehicles": [
+        {
+          "label": "Engine 54, 2014 Seagrave pumper",
+          "modelYear": 2014,
+          "make": "Seagrave"
+        },
+        {
+          "label": "Ladder 4, 2014 Ferrara rear-mount aerial",
+          "modelYear": 2014,
+          "make": "Ferrara"
+        }
+      ],
+      "angleKinds": ["aging", "funding", "news", "leadership"],
+      "forbidden": [
+        {
+          "pattern": "NYPD|Police Commissioner",
+          "note": "police leadership page"
+        }
+      ],
+      "sources": [
+        "https://www.usfirepolice.net/ny_new_york/ny_fdny/ny_fdny_manhattan_3/ny_fdny_3_division_9.html"
+      ],
+      "notes": "A metro company: the reason to call is at best an aging apparatus."
     },
     {
       "id": "joes-pizza",
