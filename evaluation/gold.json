@@ -1,0 +1,204 @@
+{
+  "version": 1,
+  "verifiedOn": "2026-09-15",
+  "departments": [
+    {
+      "id": "wise-avenue",
+      "placeId": "ChIJpcN7ecgAyIkRrOcWzZx3Yyc",
+      "name": "Wise Avenue Volunteer Fire Co",
+      "locality": "Dundalk",
+      "region": "MD",
+      "scope": ["selected_place"],
+      "chief": { "name": "Thomas Jugan" },
+      "formerLeaders": [{ "name": "Gerald McLyman" }],
+      "vehicles": [
+        {
+          "label": "Engine 271, 2017 Rosenbauer Commander",
+          "unit": "271",
+          "modelYear": 2017,
+          "make": "Rosenbauer"
+        },
+        {
+          "label": "Engine 272, 2016 Pierce Enforcer",
+          "unit": "272",
+          "modelYear": 2016,
+          "make": "Pierce"
+        },
+        {
+          "label": "Ambulance 275, 2015 Ford",
+          "unit": "275",
+          "modelYear": 2015
+        },
+        {
+          "label": "Brush 276, 2005 Chevrolet",
+          "unit": "276",
+          "modelYear": 2005
+        },
+        {
+          "label": "Utility 277, 2005 Chevrolet Suburban",
+          "unit": "277",
+          "modelYear": 2005
+        },
+        {
+          "label": "Utility 279, 2025 Ford Explorer",
+          "unit": "279",
+          "modelYear": 2025
+        }
+      ],
+      "angleKinds": ["aging", "funding", "replacement", "disposition", "news"],
+      "forbidden": [
+        {
+          "pattern": "1974 Hahn|Pirsch",
+          "where": "angles",
+          "note": "retired apparatus from a hobbyist page"
+        },
+        {
+          "pattern": "Train Garden|CPR class|obituar",
+          "where": "angles",
+          "note": "community news is not a reason to call"
+        }
+      ],
+      "sources": [
+        "https://wavfc.org/safety-tips/",
+        "https://wavfc.org/our-heroes/"
+      ],
+      "notes": "The apparatus page is titled safety-tips. The office line is Google's, so there is no contact check."
+    },
+    {
+      "id": "washington-vt",
+      "placeId": "ChIJr-yREGP9tEwRr7M-F00PpM8",
+      "name": "Washington Fire Department",
+      "locality": "Washington",
+      "region": "VT",
+      "scope": ["selected_place"],
+      "chief": { "name": "Ryan Bresette" },
+      "contacts": [
+        { "name": "Ryan Bresette", "phones": ["802-272-0892", "802-883-2208"] }
+      ],
+      "vehicles": [
+        {
+          "label": "1991 International 4900 KME engine, sealed bid",
+          "modelYear": 1991,
+          "pattern": "4900|KME"
+        },
+        {
+          "label": "1991 International 4800 4x4 tanker, sealed bid",
+          "modelYear": 1991,
+          "pattern": "4800|tank"
+        }
+      ],
+      "signals": [
+        {
+          "label": "1991 apparatus sealed-bid notice",
+          "category": "disposition",
+          "pattern": "1991",
+          "where": "facts"
+        },
+        {
+          "label": "listing reason to call",
+          "kind": "listing",
+          "pattern": "1991",
+          "where": "angles"
+        }
+      ],
+      "angleKinds": ["listing"],
+      "sources": [
+        "https://www.washingtonvt.org/directory-of-services",
+        "https://www.govserv.org/US/Washington/414662945327247/Washington-Volunteer-Fire-Department",
+        "https://www.govcb.com/government-bids/SURPLUS-TANKER-TRUCK-23180057.htm"
+      ],
+      "notes": "Both 1991 notices date from late 2025. The directory lists the chief with a burn-permit number and the station line."
+    },
+    {
+      "id": "boise",
+      "placeId": "ChIJycvSQmNWrlQRpLPJvUeF4qQ",
+      "name": "Boise Fire Department",
+      "locality": "Boise",
+      "region": "ID",
+      "scope": ["selected_place"],
+      "chief": { "name": "Aaron Hummel", "since": "2025-11-18" },
+      "formerLeaders": [{ "name": "Mark Niemeyer" }],
+      "vehicles": [
+        {
+          "label": "Pierce Arrow XT pumper, job 39750, delivered March 2026",
+          "pattern": "39750|Arrow XT"
+        },
+        { "label": "Pierce Arrow XT pumper, job 38139", "pattern": "38139" }
+      ],
+      "signals": [
+        {
+          "label": "new engines arriving in 2026",
+          "pattern": "final inspection|Arrow XT|new (fire )?engines|two (fire )?engines"
+        }
+      ],
+      "angleKinds": [
+        "funding",
+        "replacement",
+        "news",
+        "leadership",
+        "aging",
+        "disposition"
+      ],
+      "sources": [
+        "https://www.cityofboise.org/departments/fire/about-boise-fire/meet-the-chief-and-command-staff/",
+        "https://idahonews.com/news/local/change-of-command-aaron-hummel-takes-over-as-boises-new-fire-chief",
+        "https://www.piercemfg.com/customers/new-deliveries/boise-city-fire-department-pumper-39750"
+      ],
+      "notes": "The city site refuses live crawls; the chief page is reachable only from Exa's cache. Niemeyer retired in November 2025."
+    },
+    {
+      "id": "hebron-ne",
+      "placeId": "ChIJxSokJLmRl4cRA0bs7kr-lGw",
+      "name": "Hebron Fire Department",
+      "locality": "Hebron",
+      "region": "NE",
+      "scope": ["selected_place"],
+      "chief": {
+        "name": "Wayne Kugel",
+        "historicalOnly": true,
+        "since": "2019-01"
+      },
+      "contacts": [{ "name": "Steve Tietjen", "phones": ["402-768-6322"] }],
+      "angleKinds": [
+        "funding",
+        "disposition",
+        "replacement",
+        "aging",
+        "leadership"
+      ],
+      "forbidden": [
+        {
+          "pattern": "Sutphen|Boone Township|Indiana",
+          "note": "Hebron, Indiana apparatus page"
+        },
+        {
+          "pattern": "Peterbilt|Hebron, MD|Maryland",
+          "note": "Hebron, Maryland apparatus page"
+        },
+        {
+          "pattern": "Kentucky|Station 41|North Bend",
+          "note": "Hebron, Kentucky fire protection district"
+        },
+        {
+          "pattern": "EMT|certification",
+          "where": "angles",
+          "note": "individual training is not a reason to call"
+        }
+      ],
+      "sources": [
+        "https://www.hebronnebraska.us/Directory.aspx?did=41",
+        "https://hebronjournalregister.com/linton-served-14-years-as-chief/"
+      ],
+      "notes": "No roster or current chief is published, so a sparse brief is the right result. Three other Hebrons share the name."
+    },
+    {
+      "id": "joes-pizza",
+      "placeId": "ChIJifIePKtZwokRVZ-UdRGkZzs",
+      "name": "Joe's Pizza",
+      "locality": "New York",
+      "region": "NY",
+      "expectRejected": true,
+      "notes": "Must be rejected before any search or model call."
+    }
+  ]
+}
