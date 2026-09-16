@@ -13,6 +13,40 @@ const MARKETPLACE_DOMAINS = [
   "fentonfire.com",
   "commandfireapparatus.com",
 ];
+/**
+ * Hosts that discovery kept finding and selection kept reading, and that
+ * briefs almost never cited across seventy-four saved runs. Their pages name
+ * the town, so nothing else keeps them out of the read budget. Facebook,
+ * govserv.org, causeiq.com, and hobbyist roster sites are cited and stay.
+ */
+const EXCLUDED_DOMAINS = [
+  // Profile aggregators, and the person pages Exa substitutes for them.
+  "linkedin.com",
+  "exa.ai",
+  "rocketreach.co",
+  "zoominfo.com",
+  "signalhire.com",
+  // Department directories.
+  "responserack.com",
+  "usfiredept.com",
+  "countyoffice.org",
+  "mapquest.com",
+  "neris.fsri.org",
+  // Nonprofit and corporate registries.
+  "nonprofitlight.com",
+  "nonprofitfacts.com",
+  "charitynavigator.org",
+  "guidestar.org",
+  "eintaxid.com",
+  "opencorpdata.com",
+  "opencorporates.com",
+  "bizapedia.com",
+  // Generated meeting summaries and procurement scrapers.
+  "starbridge.ai",
+  "civiciq.com",
+  "pursuit.us",
+  "procurementexpress.com",
+];
 const NEWS_WINDOW_MONTHS = 18;
 
 /** Combines the department name and available location fields for discovery. */
@@ -59,7 +93,7 @@ export function buildQueries(place: Place, now: Date): SearchQuery[] {
   const since = new Date(now);
   since.setUTCMonth(since.getUTCMonth() - NEWS_WINDOW_MONTHS);
   const recent = since.toISOString();
-  const queries: SearchQuery[] = [
+  const openWeb: SearchQuery[] = [
     {
       id: "leadership-chief",
       track: "leadership",
@@ -124,6 +158,12 @@ export function buildQueries(place: Place, now: Date): SearchQuery[] {
       numResults: 8,
     },
   ];
+  // A host-restricted query already says where to look; every other query keeps the aggregators out.
+  const queries = openWeb.map((query) =>
+    query.includeDomains
+      ? query
+      : { ...query, excludeDomains: EXCLUDED_DOMAINS },
+  );
   const host = officialHost(place);
   if (host) {
     const includeDomains = [host, `*.${host}`];

@@ -114,14 +114,19 @@ describe("buildQueries", () => {
         expect(query.numResults).toBeUndefined();
       }
   });
-  it("restricts the marketplace query to surplus hosts", () => {
+  it("restricts the marketplace query to surplus hosts and keeps aggregators out of every other open-web query", () => {
     const marketplace = byId("disposition-marketplace");
     expect(marketplace.includeDomains).toEqual(
       expect.arrayContaining(["govdeals.com", "shopgarage.com"]),
     );
+    expect(marketplace.excludeDomains).toBeUndefined();
     for (const query of openWeb)
-      if (query.id !== "disposition-marketplace")
+      if (query.id !== "disposition-marketplace") {
         expect(query.includeDomains).toBeUndefined();
+        expect(query.excludeDomains).toEqual(
+          expect.arrayContaining(["linkedin.com", "zoominfo.com"]),
+        );
+      }
   });
   it("scopes three generic topic queries to the listed host and its subdomains", () => {
     const site = queries.filter((query) => query.id.startsWith("site-"));
