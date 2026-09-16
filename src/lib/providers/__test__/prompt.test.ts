@@ -8,7 +8,7 @@ import { PROMPT_VERSION, SYNTHESIS_INSTRUCTIONS } from "../prompt";
  * with the wording. Editing the prompt: bump PROMPT_VERSION, then replace the
  * hash with the one the failure prints.
  */
-const PINNED = { version: "department-brief-v1", sha256: "59a92d1a0256f5bb" };
+const PINNED = { version: "department-brief-v3", sha256: "d391deb0a5a8246d" };
 
 const facts = DraftBriefSchema.shape.facts.element.shape;
 
